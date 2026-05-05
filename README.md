@@ -13,7 +13,7 @@ The agent follows a step-by-step loop (`START -> THINK -> TOOL -> OBSERVE -> ...
 - Interactive terminal chat loop
 - JSON-based reasoning protocol
 - Tool-based execution (create folder, write/read files, list files, run commands)
-- Frontend generation using Gemini model (`gemini-2.5-flash` by default)
+- Frontend generation using Groq model (`llama-3.3-70b-versatile` by default)
 - Output files are browser-ready and saved under `generated_sites/`
 - Ready for static deployment on Vercel
 
@@ -33,7 +33,7 @@ The agent follows a step-by-step loop (`START -> THINK -> TOOL -> OBSERVE -> ...
 ## Prerequisites
 
 - Node.js 18+
-- Gemini API key
+- Groq API key
 
 ## Setup
 
@@ -49,14 +49,14 @@ npm install
 cp .env.example .env
 ```
 
-3. Add your Gemini key to `.env`:
+3. Add your Groq key to `.env`:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-2.5-flash
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=llama-3.3-70b-versatile
 ```
 
-## Run
+## Run (CLI)
 
 ```bash
 npm start
@@ -80,6 +80,29 @@ Open in browser:
 open generated_sites/scaler_clone/index.html
 ```
 
+## Run (Web Frontend)
+
+The project now includes a web frontend:
+
+- `index.html` (UI)
+- `styles.css` (dashboard styles)
+- `app.js` (frontend logic)
+- `api/chat.js` (Vercel serverless function with Groq)
+
+Use local Vercel dev server:
+
+```bash
+npx vercel dev
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+Enter a prompt in the UI, run agent, and preview generated website directly.
+
 ## Vercel Deployment
 
 You can deploy either from dashboard or CLI.
@@ -92,7 +115,7 @@ You can deploy either from dashboard or CLI.
 4. Framework preset: `Other`.
 5. Keep defaults and deploy.
 
-If you want a specific generated site folder as production root, set **Root Directory** to that folder (e.g. `generated_sites/scaler_clone`).
+For this web app deployment, keep repository root as the default Root Directory.
 
 ### Option B: Vercel CLI
 
@@ -103,7 +126,7 @@ vercel
 vercel --prod
 ```
 
-When asked for root directory, choose your generated site folder (for example `generated_sites/scaler_clone`).
+When asked for root directory, choose `.` (repository root).
 
 ## Demo Video Checklist (2-3 minutes)
 

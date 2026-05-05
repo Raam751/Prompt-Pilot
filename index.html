@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Pilot - AI Agent</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Prompt Pilot</h1>
+      <p>AI Agent that generates Scaler-like landing pages</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Agent Chat</h2>
+        <textarea id="prompt" rows="5" placeholder="Example: Create a folder named scaler_clone and clone Scaler Academy homepage with header, hero and footer."></textarea>
+        <button id="runBtn">Run Agent</button>
+        <pre id="status">Ready.</pre>
+        <div id="trace" class="trace"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Generated Website Preview</h2>
+        <iframe id="preview" title="Generated preview"></iframe>
+        <div id="files" class="files"></div>
+      </section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
