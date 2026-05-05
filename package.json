@@ -1,0 +1,23 @@
+{
+  "name": "ai-agent-cli-scaler-clone",
+  "version": "1.0.0",
+  "description": "Conversational CLI agent that generates a Scaler-like website",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "ai-agent",
+    "cli",
+    "gemini",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0"
+  }
+}
